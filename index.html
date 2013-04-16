@@ -17,6 +17,7 @@
         });
         $("#run").click(function(){
             var code = editor.getValue();
+			iframe.contentWindow.clearGame();
             iframe.contentWindow.runcode(code);
             // alert(code);
         });
@@ -30,13 +31,13 @@
   <div style="height:100%">
     <div style="float:left;height:100%;width:50%;border-right:1px solid black;margin-left:-1px;" id="left_panel">
         <textarea style="height:100%" id="code" name="code">
-        function paint () {
-            rect(50, 50, 150, 150, green);
-        }
+function paint () {
+    rect(50, 50, 150, 150, green);
+}
         </textarea>
         <div id="panel">
-            <button type="button" id="run">Запустить</button>
-            <button type="button" id="stop">Стоп</button>
+            <button type="button" id="run">Run</button>
+            <button type="button" id="stop">Stop</button>
         </div>
     </div>
     <div style="float:right;height:100%;width:50%;" id="right_panel">
